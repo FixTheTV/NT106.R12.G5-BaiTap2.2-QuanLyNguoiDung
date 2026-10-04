@@ -8,7 +8,7 @@
 |-----------|------|
 | **Trần Thanh Quân** | `25521508` |
 | **Cao Thanh Hiền** | `2552XXXX` |
-| **Đào Minh Hiếu** | `2552XXXX` |
+| **Đào Minh Hiếu** | `25520541` |
 | **Hồ Minh Khôi** | `2552XXXX` |
 | **Nguyễn Võ Chí Long** | `2552XXXX` |
 
