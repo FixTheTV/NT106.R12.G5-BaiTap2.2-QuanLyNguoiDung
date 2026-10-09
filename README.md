@@ -9,7 +9,7 @@
 | **Trần Thanh Quân** | `25521508` |
 | **Cao Thanh Hiền** | `2552XXXX` |
 | **Đào Minh Hiếu** | `25520541` |
-| **Hồ Minh Khôi** | `2552XXXX` |
+| **Hồ Minh Khôi** | `25520892` |
 | **Võ Nguyễn Chí Long** | `25521056` |
 
 Ứng dụng Windows Forms được xây dựng bằng **C#**, phục vụ chức năng đăng ký và đăng nhập người dùng trong khuôn khổ môn học **Lập trình mạng căn bản**.
