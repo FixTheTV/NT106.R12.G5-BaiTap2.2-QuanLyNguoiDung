@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung
+namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Services
 {
     public class AuthService //có 2 chức năng: HashPassword và VerifyPassword
     {
