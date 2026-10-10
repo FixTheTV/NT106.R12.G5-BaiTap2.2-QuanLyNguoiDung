@@ -1,7 +1,7 @@
 ﻿using MySqlConnector; //  cung cấp các class để làm việc với MySQL
 using System;
 //file nay  de Chứa class User và tầng giao tiếp MySQL
-namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung
+namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Services
 {
     // Class chứa dữ liệu User để hiển thị lên Form Home
     public class User
@@ -25,6 +25,30 @@ namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung
         private MySqlConnection GetConnection()
         {
             return new MySqlConnection(connectionString);
+        }
+
+        // Hàm void tự động tạo bảng users nếu chưa có 
+        public void CreateTableUsers()
+        {
+            using (var conn = GetConnection()) // Dùng lại GetConnection() có sẵn trong chính class ni luôn, để tận dụng hàm GetConnection() private của class này  
+            {
+                conn.Open();
+                string sql = @"
+            CREATE TABLE IF NOT EXISTS users (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(20) NOT NULL UNIQUE,
+                password_hash VARCHAR(255) NOT NULL,
+                fullname VARCHAR(100) NULL,
+                email VARCHAR(100) NOT NULL UNIQUE,
+                phone VARCHAR(15) NULL,
+                age INT NULL
+            );";
+
+                using (var cmd = new MySqlCommand(sql, conn))
+                {
+                    cmd.ExecuteNonQuery();  //ExecuteNonQuery(): Thực hiện câu lệnh SQL mà không trả về dữ liệu
+                }
+            }
         }
 
 
