@@ -20,7 +20,7 @@ namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Services
 
         // Đăng nhập bằng username hoặc email
         // trả về true gán thông tin user nếu đăng nhập thành công
-        public bool TryLogin(string identifier, string password, out User user)
+        public bool TryLogin(string identifier, string password, out User? user)  //để user có thể nhận giá trị null khi đang nhập thất bại 
         {
             // mặc đinh chưa xác thực được tài khoản 
             user = null;
@@ -32,7 +32,7 @@ namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Services
             }
 
             // dùng database để tìm tài khoản theo username/enail
-            User founduser = _databaseService.GetUserByIdentifier(identifier.Trim());
+            User? founduser = _databaseService.GetUserByIdentifier(identifier.Trim());
 
             // Không tìm thấy -> đăng nhập thất bại
             if (founduser == null)
