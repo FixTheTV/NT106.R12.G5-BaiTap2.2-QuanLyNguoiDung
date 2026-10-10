@@ -7,11 +7,11 @@ namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Services
     public class User
     {
         public int Id { get; set; }
-        public string Username { get; set; }
-        public string PasswordHash { get; set; }
-        public string Fullname { get; set; } //co the null, nhung string la kieu tham chieu co the nhan gia tri null, nen khong can "null?"
-        public string Email { get; set; }
-        public string Phone { get; set; }
+        public string Username { get; set; } = string.Empty; //khởi tạo mặc định là chuỗi rỗng 
+        public string PasswordHash { get; set; } = string.Empty;
+        public string? Fullname { get; set; } //co the null, nhung string la kieu tham chieu co the nhan gia tri null, nen khong can "null?"
+        public string Email { get; set; } = string.Empty;
+        public string? Phone { get; set; }
         public int? Age { get; set; } //int? vi Age co the co gia tri hoac null(tuy ngdung muon nhap hay ko)
     }
 
@@ -21,6 +21,9 @@ namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Services
         // Server=localhost (chạy trên máy bạn), Port 3306 (cổng MySQL của XAMPP)
         // Uid=root (tài khoản cao nhất), Pwd=; (mật khẩu rỗng)
         private string connectionString = "Server=localhost;Port=3306;Database=user_management;Uid=root;Pwd=;";
+        public DatabaseService() //hàm khởi tạo mặc định, không có tham số
+        {
+        }
         //hàm tạo đối tượng kết nối mới
         private MySqlConnection GetConnection()
         {
@@ -99,16 +102,16 @@ namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Services
                 {
                     cmd.Parameters.AddWithValue("@u", username);
                     cmd.Parameters.AddWithValue("@p", passwordHash);
-                    cmd.Parameters.AddWithValue("@f", fullname);
+                    cmd.Parameters.AddWithValue("@f", string.IsNullOrWhiteSpace(fullname) ? DBNull.Value : (object)fullname.Trim());
                     cmd.Parameters.AddWithValue("@e", email);
-                    cmd.Parameters.AddWithValue("@ph", phone);
+                    cmd.Parameters.AddWithValue("@ph", string.IsNullOrWhiteSpace(phone) ? DBNull.Value : (object)phone.Trim());
                     cmd.Parameters.AddWithValue("@a", age.HasValue ? (object)age.Value : DBNull.Value); //neu age co gia tri thi lay gia tri do, neu null thi gan DBNull.Value
                     return cmd.ExecuteNonQuery() > 0; //ExecuteNonQuery(): Thực hiện câu lệnh SQL mà không trả về dữ liệu (ở đây là INSERT), trả về số dòng bị ảnh hưởng. Nếu >0 thì thêm thành công
                 }
             }
         }
         //Ham tra ve User:  Lấy toàn bộ thông tin User theo username hoặc email(khi login-de sau nay hien thi all rgong tin trong man hinh dang nhap chang han)
-        public User GetUserByIdentifier(string identifier)  //identifier có thể là username hoặc email
+        public User? GetUserByIdentifier(string identifier)  // Thêm dấu ? để thể hiện hàm có thể trả về null nếu không tìm thấy User
         {
             using (var conn = GetConnection())
             {

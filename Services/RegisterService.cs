@@ -68,10 +68,10 @@ namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Services
             try
             {
                 if (db.CheckUsernameExists(username))
-                    return new RegisterResult { Success = false, Message = "Tên đăng nhập này đã có người sử dụng." }; [cite: 8]
+                    return new RegisterResult { Success = false, Message = "Tên đăng nhập này đã có người sử dụng." }; 
 
                 if (db.CheckEmailExists(email))
-                    return new RegisterResult { Success = false, Message = "Email này đã được đăng ký." }; [cite: 8]
+                    return new RegisterResult { Success = false, Message = "Email này đã được đăng ký." }; 
 
                 string passwordHash = auth.HashPassword(password);
                 bool ok = db.AddUser(username, passwordHash, fullname, email, phone, age);
