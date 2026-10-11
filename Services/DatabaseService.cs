@@ -23,6 +23,7 @@ namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Services
         private string connectionString = "Server=localhost;Port=3306;Database=user_management;Uid=root;Pwd=;";
         public DatabaseService() //hàm khởi tạo mặc định, không có tham số
         {
+            CreateTableUsers(); // Cứ hễ tạo đối tượng DatabaseService là tự động đảm bảo bảng users đã tồn tại!
         }
         //hàm tạo đối tượng kết nối mới
         private MySqlConnection GetConnection()
