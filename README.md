@@ -7,7 +7,7 @@
 | Họ và tên | MSSV |
 |-----------|------|
 | **Trần Thanh Quân** | `25521508` |
-| **Cao Thanh Hiền** | `2552XXXX` |
+| **Cao Thanh Hiền** | `25520522` |
 | **Đào Minh Hiếu** | `25520541` |
 | **Hồ Minh Khôi** | `25520892` |
 | **Võ Nguyễn Chí Long** | `25521056` |
