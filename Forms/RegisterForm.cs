@@ -15,6 +15,19 @@ namespace QuanLyNguoiDungWinForms
         {
             _loginForm = loginForm;
             InitializeComponent();
+            DatCacLabelLoiLenTren();
+        }
+
+        private void DatCacLabelLoiLenTren()
+        {
+            lblLoiTenDangNhap.BringToFront();
+            lblLoiEmail.BringToFront();
+            lblLoiSoDienThoai.BringToFront();
+            lblLoiDoTuoi.BringToFront();
+            lblLoiMatKhau.BringToFront();
+            lblLoiXacNhanMatKhau.BringToFront();
+            lblLoiHoTen.BringToFront();
+            lblThongBaoChung.BringToFront();
         }
 
         private void BtnToggleMatKhau_Click(object? sender, EventArgs e)
@@ -66,7 +79,7 @@ namespace QuanLyNguoiDungWinForms
             }
             else if (!Regex.IsMatch(tenDangNhap, @"^[a-zA-Z0-9_]{3,20}$"))
             {
-                lblLoiTenDangNhap.Text = "Tên đăng nhập từ 3 - 20 ký tự (chữ cái, chữ số, gạch dưới).";
+                lblLoiTenDangNhap.Text = "Tên đăng nhập: 3–20 ký tự, chỉ gồm chữ, số và _.";
                 hopLe = false;
                 focusControl ??= txtTenDangNhap;
             }
@@ -80,7 +93,7 @@ namespace QuanLyNguoiDungWinForms
             }
             else if (!Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
             {
-                lblLoiEmail.Text = "Định dạng email không hợp lệ (ví dụ: ten@mien.com).";
+                lblLoiEmail.Text = "Email không hợp lệ.";
                 hopLe = false;
                 focusControl ??= txtEmail;
             }
@@ -94,7 +107,7 @@ namespace QuanLyNguoiDungWinForms
             }
             else if (!Regex.IsMatch(sdt, @"^(\+84|0)[0-9]{9,10}$"))
             {
-                lblLoiSoDienThoai.Text = "Số điện thoại không hợp lệ (mẫu: +84912345678 hoặc 0912345678).";
+                lblLoiSoDienThoai.Text = "Số điện thoại không hợp lệ.";
                 hopLe = false;
                 focusControl ??= txtSoDienThoai;
             }
@@ -132,7 +145,7 @@ namespace QuanLyNguoiDungWinForms
                      !Regex.IsMatch(matKhau, @"[0-9]") ||
                      !Regex.IsMatch(matKhau, @"[@$,!%*?&]"))
             {
-                lblLoiMatKhau.Text = "Mật khẩu cần 8–32 ký tự, có chữ hoa, chữ thường, số và ký tự đặc biệt (@$,!%*?&).";
+                lblLoiMatKhau.Text = "Mật khẩu cần 8–32 ký tự, gồm hoa, thường, số và ký tự đặc biệt.";
                 hopLe = false;
                 focusControl ??= txtMatKhau;
             }
