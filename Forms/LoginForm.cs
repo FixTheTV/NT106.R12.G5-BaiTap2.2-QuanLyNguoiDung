@@ -2,13 +2,12 @@ using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Services;
 
 namespace QuanLyNguoiDungWinForms
 {
     public partial class LoginForm : Form
     {
-        private readonly DatabaseAccess _dbAccess = new DatabaseAccess();
-
         public LoginForm()
         {
             InitializeComponent();
@@ -43,28 +42,21 @@ namespace QuanLyNguoiDungWinForms
 
             try
             {
-                NguoiDung? user = await _dbAccess.LayTheoTenDangNhapAsync(tenDangNhap);
+                var (success, user) = await Task.Run(() =>
+                {
+                    var loginService = new LoginService();
+                    bool isAuthenticated = loginService.TryLogin(tenDangNhap, matKhau, out User? authenticatedUser);
+                    return (isAuthenticated, authenticatedUser);
+                });
 
                 // QUY TẮC BÀI TẬP: Dù sai tên đăng nhập hay sai mật khẩu, chỉ trả về đúng 1 thông báo duy nhất
-                if (user == null)
+                if (!success || user == null)
                 {
                     lblThongBaoLoi.Text = "Tên đăng nhập hoặc mật khẩu không đúng";
                     txtMatKhau.Clear();
                     txtMatKhau.Focus();
                     return;
                 }
-
-                bool hopLe = MatKhauHelper.KiemTra(matKhau, user.Salt, user.MatKhauBam);
-                if (!hopLe)
-                {
-                    lblThongBaoLoi.Text = "Tên đăng nhập hoặc mật khẩu không đúng";
-                    txtMatKhau.Clear();
-                    txtMatKhau.Focus();
-                    return;
-                }
-
-                await _dbAccess.CapNhatLanDangNhapCuoiAsync(user.UserId);
-                user.LanDangNhapCuoi = DateTime.Now;
 
                 MainForm mainForm = new MainForm(user, this);
                 mainForm.Show();
