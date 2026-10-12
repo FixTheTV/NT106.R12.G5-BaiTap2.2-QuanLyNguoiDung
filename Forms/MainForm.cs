@@ -25,8 +25,6 @@ namespace QuanLyNguoiDungWinForms
             lblEmailVal.Text = _currentUser.Email ?? "Chưa cập nhật";
             lblSoDienThoaiVal.Text = _currentUser.Phone ?? "Chưa cập nhật";
             lblDoTuoiVal.Text = _currentUser.Age?.ToString() ?? "N/A";
-            lblNgayTaoVal.Text = "N/A";
-            lblLanDangNhapCuoiVal.Text = "N/A";
         }
 
         private void BtnDangXuat_Click(object? sender, EventArgs e)
