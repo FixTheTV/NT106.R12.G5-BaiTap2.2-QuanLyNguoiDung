@@ -136,7 +136,7 @@ namespace QuanLyNguoiDungWinForms
             lblSubTen.ForeColor = Color.FromArgb(120, 120, 120);
             lblSubTen.Location = new Point(30, 114);
             lblSubTen.Name = "lblSubTen";
-            lblSubTen.Size = new Size(440, 36);
+            lblSubTen.Size = new Size(440, 18);
             lblSubTen.TabIndex = 2;
             lblSubTen.Text = "* 3 - 20 ký tự (chữ cái, chữ số, gạch dưới; không chứa ký tự đặc biệt)";
             // 
@@ -173,7 +173,7 @@ namespace QuanLyNguoiDungWinForms
             lblSubEmail.ForeColor = Color.FromArgb(120, 120, 120);
             lblSubEmail.Location = new Point(30, 208);
             lblSubEmail.Name = "lblSubEmail";
-            lblSubEmail.Size = new Size(440, 36);
+            lblSubEmail.Size = new Size(440, 18);
             lblSubEmail.TabIndex = 5;
             lblSubEmail.Text = "* Định dạng: ten@mien.com";
             // 
@@ -210,7 +210,7 @@ namespace QuanLyNguoiDungWinForms
             lblSubSoDienThoai.ForeColor = Color.FromArgb(120, 120, 120);
             lblSubSoDienThoai.Location = new Point(30, 302);
             lblSubSoDienThoai.Name = "lblSubSoDienThoai";
-            lblSubSoDienThoai.Size = new Size(440, 36);
+            lblSubSoDienThoai.Size = new Size(440, 18);
             lblSubSoDienThoai.TabIndex = 8;
             lblSubSoDienThoai.Text = "* Cú pháp: Mã quốc gia (+84) + Số điện thoại";
             // 
@@ -310,7 +310,7 @@ namespace QuanLyNguoiDungWinForms
             lblSubMatKhau.ForeColor = Color.FromArgb(120, 120, 120);
             lblSubMatKhau.Location = new Point(30, 492);
             lblSubMatKhau.Name = "lblSubMatKhau";
-            lblSubMatKhau.Size = new Size(440, 40);
+            lblSubMatKhau.Size = new Size(440, 18);
             lblSubMatKhau.TabIndex = 14;
             lblSubMatKhau.Text = "* 8–32 ký tự, gồm chữ hoa, chữ thường, chữ số và một trong các ký tự @$,!%*?&";
             // 
@@ -373,7 +373,7 @@ namespace QuanLyNguoiDungWinForms
             lblSubXacNhan.ForeColor = Color.FromArgb(120, 120, 120);
             lblSubXacNhan.Location = new Point(30, 588);
             lblSubXacNhan.Name = "lblSubXacNhan";
-            lblSubXacNhan.Size = new Size(440, 36);
+            lblSubXacNhan.Size = new Size(440, 18);
             lblSubXacNhan.TabIndex = 17;
             lblSubXacNhan.Text = "* Phải trùng khớp với Mật khẩu đã nhập";
             // 
@@ -410,7 +410,7 @@ namespace QuanLyNguoiDungWinForms
             lblSubHoTen.ForeColor = Color.FromArgb(120, 120, 120);
             lblSubHoTen.Location = new Point(30, 682);
             lblSubHoTen.Name = "lblSubHoTen";
-            lblSubHoTen.Size = new Size(440, 36);
+            lblSubHoTen.Size = new Size(440, 18);
             lblSubHoTen.TabIndex = 20;
             lblSubHoTen.Text = "* 2 - 50 ký tự (cho phép dấu tiếng Việt và khoảng trắng)";
             // 
