@@ -11,7 +11,7 @@ namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Services
         private readonly DatabaseService _databaseService;
         // service dùng để xác minh mật khẩu với BCrypt hash
         private readonly AuthService _authService;
-        // Khởi tại services cần dùng khi đăng nhập
+        // Khởi tại những services cần dùng khi đăng nhập
         public LoginService()
         {
             _databaseService = new DatabaseService();
