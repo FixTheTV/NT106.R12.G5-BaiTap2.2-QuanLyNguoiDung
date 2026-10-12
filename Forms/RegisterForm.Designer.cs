@@ -27,22 +27,22 @@ namespace QuanLyNguoiDungWinForms
             txtEmail = new TextBox();
             lblSubEmail = new Label();
             lblLoiEmail = new Label();
-            lblHeaderSDT = new Label();
+            lblHeaderSoDienThoai = new Label();
             txtSoDienThoai = new TextBox();
-            lblSubSDT = new Label();
+            lblSubSoDienThoai = new Label();
             lblLoiSoDienThoai = new Label();
             lblHeaderTuoi = new Label();
             txtDoTuoi = new TextBox();
             lblSubTuoi = new Label();
             lblLoiDoTuoi = new Label();
-            lblHeaderMK = new Label();
-            pnlMK = new Panel();
+            lblHeaderMatKhau = new Label();
+            pnlMatKhau = new Panel();
             txtMatKhau = new TextBox();
             btnToggleMatKhau = new Button();
-            lblSubMK = new Label();
+            lblSubMatKhau = new Label();
             lblLoiMatKhau = new Label();
             lblHeaderXacNhan = new Label();
-            pnlXacNhan = new Panel();
+            pnlXacNhanMatKhau = new Panel();
             txtXacNhanMatKhau = new TextBox();
             btnToggleXacNhan = new Button();
             lblSubXacNhan = new Label();
@@ -55,8 +55,8 @@ namespace QuanLyNguoiDungWinForms
             btnDangKy = new Button();
             btnHuy = new Button();
             cardPanel.SuspendLayout();
-            pnlMK.SuspendLayout();
-            pnlXacNhan.SuspendLayout();
+            pnlMatKhau.SuspendLayout();
+            pnlXacNhanMatKhau.SuspendLayout();
             SuspendLayout();
             // 
             // cardPanel
@@ -73,20 +73,20 @@ namespace QuanLyNguoiDungWinForms
             cardPanel.Controls.Add(txtEmail);
             cardPanel.Controls.Add(lblSubEmail);
             cardPanel.Controls.Add(lblLoiEmail);
-            cardPanel.Controls.Add(lblHeaderSDT);
+            cardPanel.Controls.Add(lblHeaderSoDienThoai);
             cardPanel.Controls.Add(txtSoDienThoai);
-            cardPanel.Controls.Add(lblSubSDT);
+            cardPanel.Controls.Add(lblSubSoDienThoai);
             cardPanel.Controls.Add(lblLoiSoDienThoai);
             cardPanel.Controls.Add(lblHeaderTuoi);
             cardPanel.Controls.Add(txtDoTuoi);
             cardPanel.Controls.Add(lblSubTuoi);
             cardPanel.Controls.Add(lblLoiDoTuoi);
-            cardPanel.Controls.Add(lblHeaderMK);
-            cardPanel.Controls.Add(pnlMK);
-            cardPanel.Controls.Add(lblSubMK);
+            cardPanel.Controls.Add(lblHeaderMatKhau);
+            cardPanel.Controls.Add(pnlMatKhau);
+            cardPanel.Controls.Add(lblSubMatKhau);
             cardPanel.Controls.Add(lblLoiMatKhau);
             cardPanel.Controls.Add(lblHeaderXacNhan);
-            cardPanel.Controls.Add(pnlXacNhan);
+            cardPanel.Controls.Add(pnlXacNhanMatKhau);
             cardPanel.Controls.Add(lblSubXacNhan);
             cardPanel.Controls.Add(lblLoiXacNhanMatKhau);
             cardPanel.Controls.Add(lblHeaderHoTen);
@@ -186,15 +186,15 @@ namespace QuanLyNguoiDungWinForms
             lblLoiEmail.Size = new Size(440, 18);
             lblLoiEmail.TabIndex = 6;
             // 
-            // lblHeaderSDT
+            // lblHeaderSoDienThoai
             // 
-            lblHeaderSDT.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblHeaderSDT.ForeColor = Color.FromArgb(40, 40, 40);
-            lblHeaderSDT.Location = new Point(30, 248);
-            lblHeaderSDT.Name = "lblHeaderSDT";
-            lblHeaderSDT.Size = new Size(440, 20);
-            lblHeaderSDT.TabIndex = 7;
-            lblHeaderSDT.Text = "Số điện thoại (*)";
+            lblHeaderSoDienThoai.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            lblHeaderSoDienThoai.ForeColor = Color.FromArgb(40, 40, 40);
+            lblHeaderSoDienThoai.Location = new Point(30, 248);
+            lblHeaderSoDienThoai.Name = "lblHeaderSoDienThoai";
+            lblHeaderSoDienThoai.Size = new Size(440, 20);
+            lblHeaderSoDienThoai.TabIndex = 7;
+            lblHeaderSoDienThoai.Text = "Số điện thoại (*)";
             // 
             // txtSoDienThoai
             // 
@@ -204,15 +204,15 @@ namespace QuanLyNguoiDungWinForms
             txtSoDienThoai.Size = new Size(440, 30);
             txtSoDienThoai.TabIndex = 2;
             // 
-            // lblSubSDT
+            // lblSubSoDienThoai
             // 
-            lblSubSDT.Font = new Font("Segoe UI", 8F);
-            lblSubSDT.ForeColor = Color.FromArgb(120, 120, 120);
-            lblSubSDT.Location = new Point(30, 302);
-            lblSubSDT.Name = "lblSubSDT";
-            lblSubSDT.Size = new Size(440, 36);
-            lblSubSDT.TabIndex = 8;
-            lblSubSDT.Text = "* Cú pháp: Mã quốc gia (+84) + Số điện thoại";
+            lblSubSoDienThoai.Font = new Font("Segoe UI", 8F);
+            lblSubSoDienThoai.ForeColor = Color.FromArgb(120, 120, 120);
+            lblSubSoDienThoai.Location = new Point(30, 302);
+            lblSubSoDienThoai.Name = "lblSubSoDienThoai";
+            lblSubSoDienThoai.Size = new Size(440, 36);
+            lblSubSoDienThoai.TabIndex = 8;
+            lblSubSoDienThoai.Text = "* Cú pháp: Mã quốc gia (+84) + Số điện thoại";
             // 
             // lblLoiSoDienThoai
             // 
@@ -260,25 +260,25 @@ namespace QuanLyNguoiDungWinForms
             lblLoiDoTuoi.Size = new Size(440, 18);
             lblLoiDoTuoi.TabIndex = 12;
             // 
-            // lblHeaderMK
+            // lblHeaderMatKhau
             // 
-            lblHeaderMK.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
-            lblHeaderMK.ForeColor = Color.FromArgb(40, 40, 40);
-            lblHeaderMK.Location = new Point(30, 436);
-            lblHeaderMK.Name = "lblHeaderMK";
-            lblHeaderMK.Size = new Size(440, 20);
-            lblHeaderMK.TabIndex = 13;
-            lblHeaderMK.Text = "Mật khẩu (*)";
+            lblHeaderMatKhau.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            lblHeaderMatKhau.ForeColor = Color.FromArgb(40, 40, 40);
+            lblHeaderMatKhau.Location = new Point(30, 436);
+            lblHeaderMatKhau.Name = "lblHeaderMatKhau";
+            lblHeaderMatKhau.Size = new Size(440, 20);
+            lblHeaderMatKhau.TabIndex = 13;
+            lblHeaderMatKhau.Text = "Mật khẩu (*)";
             // 
-            // pnlMK
+            // pnlMatKhau
             // 
-            pnlMK.BorderStyle = BorderStyle.FixedSingle;
-            pnlMK.Controls.Add(txtMatKhau);
-            pnlMK.Controls.Add(btnToggleMatKhau);
-            pnlMK.Location = new Point(30, 458);
-            pnlMK.Name = "pnlMK";
-            pnlMK.Size = new Size(440, 30);
-            pnlMK.TabIndex = 4;
+            pnlMatKhau.BorderStyle = BorderStyle.FixedSingle;
+            pnlMatKhau.Controls.Add(txtMatKhau);
+            pnlMatKhau.Controls.Add(btnToggleMatKhau);
+            pnlMatKhau.Location = new Point(30, 458);
+            pnlMatKhau.Name = "pnlMatKhau";
+            pnlMatKhau.Size = new Size(440, 30);
+            pnlMatKhau.TabIndex = 4;
             // 
             // txtMatKhau
             // 
@@ -304,15 +304,15 @@ namespace QuanLyNguoiDungWinForms
             btnToggleMatKhau.UseVisualStyleBackColor = true;
             btnToggleMatKhau.Click += BtnToggleMatKhau_Click;
             // 
-            // lblSubMK
+            // lblSubMatKhau
             // 
-            lblSubMK.Font = new Font("Segoe UI", 8F);
-            lblSubMK.ForeColor = Color.FromArgb(120, 120, 120);
-            lblSubMK.Location = new Point(30, 492);
-            lblSubMK.Name = "lblSubMK";
-            lblSubMK.Size = new Size(440, 40);
-            lblSubMK.TabIndex = 14;
-            lblSubMK.Text = "* Tối thiểu 8 ký tự (gồm chữ cái, chữ số, ký tự đặc biệt)";
+            lblSubMatKhau.Font = new Font("Segoe UI", 8F);
+            lblSubMatKhau.ForeColor = Color.FromArgb(120, 120, 120);
+            lblSubMatKhau.Location = new Point(30, 492);
+            lblSubMatKhau.Name = "lblSubMatKhau";
+            lblSubMatKhau.Size = new Size(440, 40);
+            lblSubMatKhau.TabIndex = 14;
+            lblSubMatKhau.Text = "* 8–32 ký tự, gồm chữ hoa, chữ thường, chữ số và một trong các ký tự @$,!%*?&";
             // 
             // lblLoiMatKhau
             // 
@@ -333,15 +333,15 @@ namespace QuanLyNguoiDungWinForms
             lblHeaderXacNhan.TabIndex = 16;
             lblHeaderXacNhan.Text = "Xác nhận mật khẩu (*)";
             // 
-            // pnlXacNhan
+            // pnlXacNhanMatKhau
             // 
-            pnlXacNhan.BorderStyle = BorderStyle.FixedSingle;
-            pnlXacNhan.Controls.Add(txtXacNhanMatKhau);
-            pnlXacNhan.Controls.Add(btnToggleXacNhan);
-            pnlXacNhan.Location = new Point(30, 554);
-            pnlXacNhan.Name = "pnlXacNhan";
-            pnlXacNhan.Size = new Size(440, 30);
-            pnlXacNhan.TabIndex = 5;
+            pnlXacNhanMatKhau.BorderStyle = BorderStyle.FixedSingle;
+            pnlXacNhanMatKhau.Controls.Add(txtXacNhanMatKhau);
+            pnlXacNhanMatKhau.Controls.Add(btnToggleXacNhan);
+            pnlXacNhanMatKhau.Location = new Point(30, 554);
+            pnlXacNhanMatKhau.Name = "pnlXacNhanMatKhau";
+            pnlXacNhanMatKhau.Size = new Size(440, 30);
+            pnlXacNhanMatKhau.TabIndex = 5;
             // 
             // txtXacNhanMatKhau
             // 
@@ -479,10 +479,10 @@ namespace QuanLyNguoiDungWinForms
             Text = "Đăng ký tài khoản";
             cardPanel.ResumeLayout(false);
             cardPanel.PerformLayout();
-            pnlMK.ResumeLayout(false);
-            pnlMK.PerformLayout();
-            pnlXacNhan.ResumeLayout(false);
-            pnlXacNhan.PerformLayout();
+            pnlMatKhau.ResumeLayout(false);
+            pnlMatKhau.PerformLayout();
+            pnlXacNhanMatKhau.ResumeLayout(false);
+            pnlXacNhanMatKhau.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -500,9 +500,9 @@ namespace QuanLyNguoiDungWinForms
         public System.Windows.Forms.Label lblSubEmail;
         public System.Windows.Forms.Label lblLoiEmail;
 
-        public System.Windows.Forms.Label lblHeaderSDT;
+        public System.Windows.Forms.Label lblHeaderSoDienThoai;
         public System.Windows.Forms.TextBox txtSoDienThoai;
-        public System.Windows.Forms.Label lblSubSDT;
+        public System.Windows.Forms.Label lblSubSoDienThoai;
         public System.Windows.Forms.Label lblLoiSoDienThoai;
 
         public System.Windows.Forms.Label lblHeaderTuoi;
@@ -510,15 +510,15 @@ namespace QuanLyNguoiDungWinForms
         public System.Windows.Forms.Label lblSubTuoi;
         public System.Windows.Forms.Label lblLoiDoTuoi;
 
-        public System.Windows.Forms.Label lblHeaderMK;
-        public System.Windows.Forms.Panel pnlMK;
+        public System.Windows.Forms.Label lblHeaderMatKhau;
+        public System.Windows.Forms.Panel pnlMatKhau;
         public System.Windows.Forms.TextBox txtMatKhau;
         public System.Windows.Forms.Button btnToggleMatKhau;
-        public System.Windows.Forms.Label lblSubMK;
+        public System.Windows.Forms.Label lblSubMatKhau;
         public System.Windows.Forms.Label lblLoiMatKhau;
 
         public System.Windows.Forms.Label lblHeaderXacNhan;
-        public System.Windows.Forms.Panel pnlXacNhan;
+        public System.Windows.Forms.Panel pnlXacNhanMatKhau;
         public System.Windows.Forms.TextBox txtXacNhanMatKhau;
         public System.Windows.Forms.Button btnToggleXacNhan;
         public System.Windows.Forms.Label lblSubXacNhan;

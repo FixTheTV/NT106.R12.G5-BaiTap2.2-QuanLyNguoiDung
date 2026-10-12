@@ -3,14 +3,14 @@ using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Models;
+using NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Services;
 
 namespace QuanLyNguoiDungWinForms
 {
     public partial class RegisterForm : Form
     {
         private readonly Form _loginForm;
-        private readonly DatabaseAccess _dbAccess = new DatabaseAccess();
-
         public RegisterForm(Form loginForm)
         {
             _loginForm = loginForm;
@@ -52,6 +52,7 @@ namespace QuanLyNguoiDungWinForms
             string matKhau = txtMatKhau.Text;
             string xacNhanMatKhau = txtXacNhanMatKhau.Text;
             string hoTen = txtHoTen.Text.Trim();
+            int doTuoi = 0;
 
             bool hopLe = true;
             TextBox? focusControl = null;
@@ -105,7 +106,7 @@ namespace QuanLyNguoiDungWinForms
                 hopLe = false;
                 focusControl ??= txtDoTuoi;
             }
-            else if (!int.TryParse(doTuoiStr, out int doTuoi) || doTuoi < 16)
+            else if (!int.TryParse(doTuoiStr, out doTuoi) || doTuoi < 16)
             {
                 lblLoiDoTuoi.Text = "Yêu cầu độ tuổi là số nguyên từ 16 tuổi trở lên!";
                 hopLe = false;
@@ -122,6 +123,16 @@ namespace QuanLyNguoiDungWinForms
             else if (matKhau.Length < 8)
             {
                 lblLoiMatKhau.Text = "Mật khẩu tối thiểu phải từ 8 ký tự trở lên!";
+                hopLe = false;
+                focusControl ??= txtMatKhau;
+            }
+            else if (matKhau.Length > 32 ||
+                     !Regex.IsMatch(matKhau, @"[A-Z]") ||
+                     !Regex.IsMatch(matKhau, @"[a-z]") ||
+                     !Regex.IsMatch(matKhau, @"[0-9]") ||
+                     !Regex.IsMatch(matKhau, @"[@$,!%*?&]"))
+            {
+                lblLoiMatKhau.Text = "Mật khẩu cần 8–32 ký tự, có chữ hoa, chữ thường, số và ký tự đặc biệt (@$,!%*?&).";
                 hopLe = false;
                 focusControl ??= txtMatKhau;
             }
@@ -166,27 +177,20 @@ namespace QuanLyNguoiDungWinForms
 
             try
             {
-                var (salt, bam) = MatKhauHelper.Tao(matKhau);
-
-                NguoiDung userMoi = new NguoiDung
-                {
-                    TenDangNhap = tenDangNhap,
-                    MatKhauBam = bam,
-                    Salt = salt,
-                    Email = email,
-                    SoDienThoai = sdt,
-                    DoTuoi = int.Parse(doTuoiStr),
-                    HoTen = hoTen
-                };
-
-                bool ketQua = await _dbAccess.ThemNguoiDungAsync(userMoi);
-                if (ketQua)
+                RegisterResult ketQua = await Task.Run(() =>
+                    new RegisterService().Register(tenDangNhap, matKhau, xacNhanMatKhau,
+                        hoTen, email, sdt, doTuoi.ToString()));
+                if (ketQua.Success)
                 {
                     MessageBox.Show("Đăng ký tài khoản thành công! Vui lòng đăng nhập.", "Thành công",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     _loginForm.Show();
                     this.Close();
+                }
+                else
+                {
+                    lblThongBaoChung.Text = ketQua.Message;
                 }
             }
             catch (Exception ex)
