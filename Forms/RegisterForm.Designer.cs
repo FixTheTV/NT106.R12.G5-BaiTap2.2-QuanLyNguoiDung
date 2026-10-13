@@ -127,7 +127,7 @@ namespace QuanLyNguoiDungWinForms
             txtTenDangNhap.Font = new Font("Segoe UI", 10F);
             txtTenDangNhap.Location = new Point(30, 82);
             txtTenDangNhap.Name = "txtTenDangNhap";
-            txtTenDangNhap.Size = new Size(440, 30);
+            txtTenDangNhap.Size = new Size(440, 25);
             txtTenDangNhap.TabIndex = 0;
             // 
             // lblSubTen
@@ -164,7 +164,7 @@ namespace QuanLyNguoiDungWinForms
             txtEmail.Font = new Font("Segoe UI", 10F);
             txtEmail.Location = new Point(30, 176);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(440, 30);
+            txtEmail.Size = new Size(440, 25);
             txtEmail.TabIndex = 1;
             // 
             // lblSubEmail
@@ -201,7 +201,7 @@ namespace QuanLyNguoiDungWinForms
             txtSoDienThoai.Font = new Font("Segoe UI", 10F);
             txtSoDienThoai.Location = new Point(30, 270);
             txtSoDienThoai.Name = "txtSoDienThoai";
-            txtSoDienThoai.Size = new Size(440, 30);
+            txtSoDienThoai.Size = new Size(440, 25);
             txtSoDienThoai.TabIndex = 2;
             // 
             // lblSubSoDienThoai
@@ -238,7 +238,7 @@ namespace QuanLyNguoiDungWinForms
             txtDoTuoi.Font = new Font("Segoe UI", 10F);
             txtDoTuoi.Location = new Point(30, 364);
             txtDoTuoi.Name = "txtDoTuoi";
-            txtDoTuoi.Size = new Size(440, 30);
+            txtDoTuoi.Size = new Size(440, 25);
             txtDoTuoi.TabIndex = 3;
             // 
             // lblSubTuoi
@@ -286,7 +286,7 @@ namespace QuanLyNguoiDungWinForms
             txtMatKhau.Font = new Font("Segoe UI", 10F);
             txtMatKhau.Location = new Point(2, 3);
             txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.Size = new Size(395, 23);
+            txtMatKhau.Size = new Size(395, 18);
             txtMatKhau.TabIndex = 0;
             txtMatKhau.UseSystemPasswordChar = true;
             // 
@@ -349,7 +349,7 @@ namespace QuanLyNguoiDungWinForms
             txtXacNhanMatKhau.Font = new Font("Segoe UI", 10F);
             txtXacNhanMatKhau.Location = new Point(2, 3);
             txtXacNhanMatKhau.Name = "txtXacNhanMatKhau";
-            txtXacNhanMatKhau.Size = new Size(395, 23);
+            txtXacNhanMatKhau.Size = new Size(395, 18);
             txtXacNhanMatKhau.TabIndex = 0;
             txtXacNhanMatKhau.UseSystemPasswordChar = true;
             // 
@@ -401,7 +401,7 @@ namespace QuanLyNguoiDungWinForms
             txtHoTen.Font = new Font("Segoe UI", 10F);
             txtHoTen.Location = new Point(30, 650);
             txtHoTen.Name = "txtHoTen";
-            txtHoTen.Size = new Size(440, 30);
+            txtHoTen.Size = new Size(440, 25);
             txtHoTen.TabIndex = 6;
             // 
             // lblSubHoTen
@@ -470,7 +470,7 @@ namespace QuanLyNguoiDungWinForms
             AcceptButton = btnDangKy;
             BackColor = Color.FromArgb(245, 247, 250);
             CancelButton = btnHuy;
-            ClientSize = new Size(564, 821);
+            ClientSize = new Size(554, 749);
             Controls.Add(cardPanel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
