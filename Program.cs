@@ -1,6 +1,6 @@
 ﻿using QuanLyNguoiDungWinForms;
 
-namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung
+namespace NT106.R12.G5_BaiTap2._2_QuanLyNguoiDung.Services
 {
     internal static class Program
     {
